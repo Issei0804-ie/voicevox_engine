@@ -57,7 +57,7 @@ jobs:
           fi
 
       - name: Copy docs
-        if: steps.check_release.outputs.release == 'true'
+        if: ${{ steps.check_release.outputs.release }} == 'true'
         shell: bash
         run: |
           version=$(echo ${{ github.event.ref }} | grep -o -E "([0-9]+\.){1}[0-9]+(\.[0-9]+)?") 
