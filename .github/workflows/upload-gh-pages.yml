@@ -51,7 +51,7 @@ jobs:
         shell: bash
         run: |
           echo ${{ github.event.ref }} 
-          if [[ ${{ github.event.ref }} =~ ^refs/tags/release-* ]]; then
+          if [[ ${{ github.event.ref }} =~ ^refs/heads/release-* ]]; then
             echo :: set-output name=release::true
           fi
 
